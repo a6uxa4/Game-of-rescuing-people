@@ -28,6 +28,23 @@ function App() {
 	}
 
 	useEffect(() => {
+		if (!modalActive.modal) {
+			const interval = setInterval(() => {
+				if (time > 0) {
+					setTime((prevSeconds) => prevSeconds - 1)
+				} else {
+					setModalActive({
+						modal: true,
+						type: countScore(experts),
+					})
+				}
+			}, 1000)
+
+			return () => clearInterval(interval)
+		}
+	}, [time, modalActive.modal])
+
+	if (activeExperts.length < 3) {
 		if (experts) {
 			setTimeout(() => {
 				const newExperts = activeExperts.slice()
@@ -45,7 +62,7 @@ function App() {
 				type: countScore(experts),
 			})
 		}
-	}, [experts])
+	}
 
 	function handlePause() {
 		setModalActive({
