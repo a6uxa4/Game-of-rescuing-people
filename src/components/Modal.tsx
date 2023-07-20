@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { useEffect, useState } from 'react'
 
 interface ModalProps {
 	isOpen: boolean
@@ -7,18 +8,38 @@ interface ModalProps {
 }
 
 export const Modal = ({ isOpen, onClose, type }: ModalProps) => {
-	if (!isOpen) return null
+	const [typeContent, setTypeContent] = useState<JSX.Element | null>(null)
+
+	useEffect(() => {
+		if (type === 'pause') {
+			const content = <div>pause</div>
+			setTypeContent(content)
+		}
+		if (type === 'great') {
+			const content = <div>great</div>
+			setTypeContent(content)
+		}
+		if (type === 'good') {
+			const content = <div>good</div>
+			setTypeContent(content)
+		}
+		if (type === 'satisfaction') {
+			const content = <div>satisfaction</div>
+			setTypeContent(content)
+		}
+	}, [type])
 
 	const handleBackdropClick = (event: React.MouseEvent<HTMLElement>) => {
 		if (event.target === event.currentTarget) {
 			onClose()
 		}
 	}
+
+	if (!isOpen) return null
+
 	return (
 		<ModalBackdrop onClick={handleBackdropClick}>
-			<ModalContent>
-				<div>ABU</div>
-			</ModalContent>
+			<ModalContent>{typeContent}</ModalContent>
 		</ModalBackdrop>
 	)
 }
@@ -37,10 +58,10 @@ const ModalBackdrop = styled.div`
 `
 
 const ModalContent = styled.div`
+	width: fit-content;
+	height: fit-content;
 	background-color: #fff;
-	padding: 20px;
 	border-radius: 4px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 	position: absolute;
 	z-index: 9999;
 `

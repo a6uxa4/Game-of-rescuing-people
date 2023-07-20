@@ -1,10 +1,10 @@
 export const countScore = (value: number) => {
 	switch (true) {
-		case value >= 8:
+		case value <= 8:
 			return 'great'
-		case value >= 4:
+		case value <= 4:
 			return 'good'
-		case value >= 0:
+		case value <= 0:
 			return 'satisfaction'
 		default:
 			return 'satisfaction'
