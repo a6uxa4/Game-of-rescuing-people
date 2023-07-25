@@ -58,8 +58,10 @@ const ModalBackdrop = styled.div`
 `
 
 const ModalContent = styled.div`
-	width: fit-content;
-	height: fit-content;
+	width: 450px;
+	height: 200px;
+	border: 3px solid #93c7f8;
+	border-style: groove;
 	background-color: #fff;
 	border-radius: 4px;
 	position: absolute;
