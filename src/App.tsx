@@ -32,7 +32,7 @@ function App() {
     if (!modalActive.modal) {
       const interval = setInterval(() => {
         if (time > 0) {
-          setTime((prevSeconds: any) => prevSeconds - 1);
+          setTime((prevSeconds) => prevSeconds - 1);
         } else {
           setModalActive({
             modal: true,
