@@ -20,6 +20,7 @@ function App() {
     modal: false,
     type: "",
   });
+  
 
   function handleClickCharacter(index: number) {
     const newExperts = activeExperts.slice();
