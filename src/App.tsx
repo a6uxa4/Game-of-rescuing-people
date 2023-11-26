@@ -27,7 +27,6 @@ function App() {
     setActiveExperts(newExperts);
     setExperts(experts - 1);
   }
-  console.log(console.log)
 
   useEffect(() => {
     if (!modalActive.modal) {
