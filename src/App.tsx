@@ -21,6 +21,8 @@ function App() {
     type: "",
   });
 
+  
+
   function handleClickCharacter(index: number) {
     const newExperts = activeExperts.slice();
     newExperts.splice(index, 1);
