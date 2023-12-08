@@ -1,4 +1,4 @@
-# Разработке не надо смотреть
+# Разработке не надо смотреть даже не начал :(
 
 # Game-of-rescuing-people
 Your mission is to save the little men who are flying into space. To do this, you must click on the ball, which will trigger an explosion, rescuing the person in the game within 30 seconds. Your goal is to save a total of 10 little men during this time. Remember to act quickly and precisely to ensure their safety. Good luck!
